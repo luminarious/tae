@@ -1,0 +1,24 @@
+{
+  "name": "tae",
+  "version": "0.0.1",
+  "description": "CSS framework",
+  "main": "tae.styl",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luminarious/tae.git"
+  },
+  "keywords": [
+    "css",
+    "stylus",
+    "framework"
+  ],
+  "author": "luminarious",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luminarious/tae/issues"
+  },
+  "homepage": "https://github.com/luminarious/tae#readme"
+}
