@@ -6,18 +6,18 @@
   "style": "tae/css/tae.css",
   "scripts": {
     "build": "npm run build-clean && npm run build-stylus && npm run build-autoprefix",
-    "build-autoprefix": "postcss --use autoprefixer --map false --output css/bulma.css css/bulma.css",
-    "build-clean": "rimraf css",
-    "build-stylus": "stylus --output-style expanded --source-map true tae.styl css/bulma.css",
+    "build-clean": "rimraf css/*",
+    "build-stylus": "stylus --sourcemap tae.styl --out css",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output css/tae.css css/tae.css",
     "deploy": "npm run build && npm run docs",
     "docs": "npm run docs-stylus && npm run docs-autoprefix",
+    "docs-stylus": "stylus docs/bulma-docs.stylus docs/css/bulma-docs.css",
     "docs-autoprefix": "postcss --use autoprefixer --map false --output docs/css/bulma-docs.css docs/css/bulma-docs.css",
-    "docs-stylus": "stylus --output-style expanded docs/bulma-docs.stylus docs/css/bulma-docs.css",
     "start": "npm run build-stylus -- --watch",
     "start-docs": "npm run docs-stylus -- --watch",
     "start-test": "npm run test-stylus -- --watch",
-    "test-stylus": "stylus --output-style expanded docs/bulma-test.stylus docs/css/bulma-test.css",
-    "test-scss": "stylus --output-style expanded docs/bulma-test.scss docs/css/bulma-test.css"
+    "test-stylus": "stylus doc/bulma-test.stylus doc/css/bulma-test.css",
+    "dev": "parcel doc/index.pug"
   },
   "repository": {
     "type": "git",
@@ -42,10 +42,15 @@
     "readme.md"
   ],
   "devDependencies": {
-    "autoprefixer": "^7.2.5",
+    "autoprefixer": "^8.0.0",
     "changelog.md": "^1.1.0",
-    "postcss-cli": "^4.1.1",
+    "eslint": "^4.18.1",
+    "parcel-bundler": "^1.6.2",
+    "postcss-cli": "^5.0.0",
+    "pug": "^2.0.0-rc.4",
+    "pug-loader": "^2.3.0",
     "rimraf": "^2.6.2",
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.5",
+    "parcel-plugin-pug": "^0.2.5"
   }
 }
