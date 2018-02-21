@@ -1,8 +1,122 @@
 doctype html
-meta(charset="utf-8")
-link(rel="stylesheet" href="../tae.styl")
-title Tae
-body
-	h1 Tae
-	p Tiny framework for building great sites
-	include _partial.pug
+html(lang="en")
+	meta(charset="utf-8")
+	meta(name="viewport" content="width=device-width, initial-scale=1")
+	link(rel="stylesheet" href="../tae.styl")
+	title Tae
+
+	h1 Cards
+	.grid
+		figure
+			header Header
+			div
+				h1 Example card
+			footer Footer
+		figure
+			div
+				h1 Example card
+			footer Footer
+		figure
+			header.cell-grow Header
+			div
+				h1 Example card
+
+	h1 Typography
+	.grid
+		figure
+			header Text styles
+			.grid
+				h1 Heading 1
+				h2 Heading 2
+				h3 Heading 3
+				h4 Heading 4
+				p Body text
+			
+		figure
+			header Elements
+			.grid
+				ul
+					li: abbr(title="Abbreviation") Abbr
+					li: b Bold
+					//bdi Bi-Directional Isolation
+					//bdo Bi-Directional Override
+					//cite Title of a referenced work
+					li: code Code
+					//data(value="") Data
+					li: del Deleted text
+					li: dfn Definition
+					li: em Emphasis
+					li: i Italic
+					li: ins Inserted text
+					li: kbd Keyboard Input
+					li: mark Mark
+					li: q Quote
+					li: ruby
+						| 漢 
+						rp (
+						rt Kan
+						rp )
+						| 字
+						rp (
+						rt ji
+						rp )
+				ul
+					li: s Strikethrough
+					li: samp Sample output from a computer program
+					li: small One size smaller text
+					li: span Span
+					li: strong Strong
+					li: sub Subscript
+					li: sup Superscript
+					li: time(datetime="2001-05-15 19:00") May 15
+					li: u Underline
+					li: var Variable
+					//li: wbr
+
+	h1 Form elements
+	.grid
+		figure
+			header Buttons
+			div
+				button Button
+		figure.span-4
+			header Text fields
+			.grid
+				each type in ["number", "tel", "email", "password", "search", "text", "url"]
+					label=type
+						input(type=type, placeholder=type)
+				label Autocomplete
+					input(type="text" list="browsers")
+					datalist#browsers
+						option(value="Chrome")
+						option(value="Firefox")
+						option(value="Safari")
+						option(value="Edge")
+						option(value="Opera")
+		figure.span-4
+			header Time fields
+			.grid
+				each type in ["date", "datetime", "datetime-local", "month", "time", "week"]
+					label=type
+						input(type=type, placeholder=type)
+
+		figure
+			header Date input
+			.grid
+				label Day
+					input(type="tel" list="days")
+					datalist#days
+						each _,i in Array(31)
+							option(value=i)
+				label Month
+					input(type="tel" list="months")
+					datalist#months
+						each _,i in Array(12)
+							option(value=i)
+				label Year
+					input(type="tel" list="years")
+					datalist#years
+						each _ in [2000, 2001, 2002]
+							option(value=_)
+		
+	//include _partial.pug

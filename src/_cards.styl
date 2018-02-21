@@ -1,0 +1,25 @@
+.grid
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	grid-gap: 1rem
+	& > *
+		display: flex
+		flex-direction: column
+.span-4
+	grid-template-columns: span 4
+
+figure
+	padding: 0
+	margin: 0
+	border: 1px solid
+	border-radius: space.s
+	header
+		padding: space.squish.l
+		border-bottom-width: 1px
+		border-bottom-style: solid
+	& > div
+		padding: space.squish.l
+	footer
+		border-top-width: 1px
+		border-top-style: solid
+		padding: space.squish.l
