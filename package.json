@@ -17,7 +17,7 @@
     "start-docs": "npm run docs-stylus -- --watch",
     "start-test": "npm run test-stylus -- --watch",
     "test-stylus": "stylus doc/bulma-test.stylus doc/css/bulma-test.css",
-    "dev": "parcel doc/index.pug"
+    "dev": "parcel docs/index.pug"
   },
   "repository": {
     "type": "git",
