@@ -1,0 +1,53 @@
+breakpoint = {
+	s: 30em 
+	m: 45em
+	l: 60em
+	xl: 75em
+	xxl: 90em
+}
+
+$unit = 0.5rem // 8px default
+space = {
+	xs: ($unit * 0.5)
+	s: ($unit * 1)
+	m: ($unit * 2)
+	l: ($unit * 4)
+	xl: ($unit * 8)
+
+	squish: {
+		s: ($unit * 0.5) ($unit * 1)
+		m: ($unit * 1) ($unit * 2)
+		l: ($unit * 2) ($unit * 4)
+	}
+
+	stretch: {
+		s: ($unit * 1.5) ($unit * 1)
+		m: ($unit * 3) ($unit * 2)
+	}
+}
+
+hue = {
+	A1: #36C
+	A2: #90F
+	A3: #C3B
+	A4: #ef233c // Pantone Red
+	A5: #F66000
+	A6: #e6af2e // Urobilin
+	A7: #AC3
+	A8: #3CB
+
+	// http://gka.github.io/palettes/#colors=#FFF,#f3f2ef,#191716|steps=8|bez=1|coL=0
+	B1: #ffffff
+	B2: #f3f2ef // Isabelline
+	B3: #e5e4e3
+	B4: #cac9c7
+	B5: #a6a5a3
+	B6: #7b7a78
+	B7: #4b4948
+	B8: #191716 // Eerie Black
+}
+
+color = {
+    accent: hue.A4
+    text: #124 // Yankees Blue
+}
