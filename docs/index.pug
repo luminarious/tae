@@ -2,28 +2,29 @@ doctype html
 html(lang="en")
 	meta(charset="utf-8")
 	meta(name="viewport" content="width=device-width, initial-scale=1")
+	link(rel="stylesheet" href="../node_modules/a11y.css/css/a11y-en_error.css")
 	link(rel="stylesheet" href="../tae.styl")
 	title Tae
 
 	h1 Cards
 	.grid
-		figure
+		figure(role="group")
 			header Header
 			div
 				h1 Example card
 			footer Footer
-		figure
+		figure(role="group")
 			div
 				h1 Example card
 			footer Footer
-		figure
+		figure(role="group")
 			header.cell-grow Header
 			div
 				h1 Example card
 
 	h1 Typography
 	.grid
-		figure
+		figure(role="group")
 			header Text styles
 			.grid
 				h1 Heading 1
@@ -32,7 +33,7 @@ html(lang="en")
 				h4 Heading 4
 				p Body text
 			
-		figure
+		figure(role="group")
 			header Elements
 			.grid
 				ul
@@ -75,46 +76,46 @@ html(lang="en")
 
 	h1 Form elements
 	.grid
-		figure
+		figure(role="group")
 			header Buttons
 			div
-				button Button
-		figure.span-4
+				button(type="button") Button
+		figure(role="group").span-4
 			header Text fields
 			.grid
 				each type in ["number", "tel", "email", "password", "search", "text", "url"]
 					label=type
-						input(type=type, placeholder=type)
+						input(type=type, placeholder=type id='input-'+type)
 				label Autocomplete
-					input(type="text" list="browsers")
+					input(type="text" list="browsers" id="input-autocomplete")
 					datalist#browsers
 						option(value="Chrome")
 						option(value="Firefox")
 						option(value="Safari")
 						option(value="Edge")
 						option(value="Opera")
-		figure.span-4
+		figure(role="group").span-4
 			header Time fields
 			.grid
 				each type in ["date", "datetime", "datetime-local", "month", "time", "week"]
 					label=type
-						input(type=type, placeholder=type)
+						input(type=type, placeholder=type id='input-'+type)
 
-		figure
+		figure(role="group")
 			header Date input
 			.grid
 				label Day
-					input(type="tel" list="days")
+					input(type="tel" list="days" id="input-day")
 					datalist#days
 						each _,i in Array(31)
 							option(value=i)
 				label Month
-					input(type="tel" list="months")
+					input(type="tel" list="months" id="input-month")
 					datalist#months
 						each _,i in Array(12)
 							option(value=i)
 				label Year
-					input(type="tel" list="years")
+					input(type="tel" list="years" id="input-year")
 					datalist#years
 						each _ in [2000, 2001, 2002]
 							option(value=_)
