@@ -81,14 +81,24 @@ html(lang="en")
 	h1 Form elements
 	.grid
 		figure(role="group")
-			header Inputs
+			header Select
 			div
 				label
-					span span
-					input(type="text" value="empty" id="input-span")
-				label no span
-					input(type="text" value="empty" id="input-simple")
-					small.help Lol
+					span Select
+					select#select(name="select")
+						optgroup(label="Group")
+							option Item
+						optgroup(label="Second Group")
+							option Item from second group
+				label
+					span Autocomplete
+					input(type="text" list="browsers" id="input-autocomplete")
+					datalist#browsers
+						option(value="Chrome")
+						option(value="Firefox")
+						option(value="Safari")
+						option(value="Edge")
+						option(value="Opera")
 		figure(role="group")
 			header Buttons
 			div
@@ -100,14 +110,6 @@ html(lang="en")
 					label
 						span=type
 						input(type=type placeholder=type id='input-'+type)
-				label Autocomplete
-					input(type="text" list="browsers" id="input-autocomplete")
-					datalist#browsers
-						option(value="Chrome")
-						option(value="Firefox")
-						option(value="Safari")
-						option(value="Edge")
-						option(value="Opera")
 		figure(role="group").span-4
 			header Time fields
 			div
