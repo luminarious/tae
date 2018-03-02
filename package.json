@@ -36,7 +36,7 @@
   "homepage": "https://github.com/luminarious/tae#readme",
   "files": [
     "css",
-    "src",
+    "source",
     "tae.styl",
     "licence.md",
     "readme.md"
