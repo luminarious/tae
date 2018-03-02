@@ -2,32 +2,55 @@ $ui-control
 	-webkit-appearance: none
 	-moz-appearance: none
 	appearance: none
-	border: 2px solid hue.B4
+	border: 2px solid alpha(hue.B6, 0.6)
 	color: inherit
-	height: 1.8rem
 	line-height: 1rem
 	outline: 0
-	padding: 0 space.s
+	padding: 1px space.s
 	vertical-align: middle
-	width: 100%
-	height: 2rem
+	min-height: 2rem
 	border-radius: space.xs
 	background: hue.B1
+	display: inline-block
+	
+	&:focus
+		border-color: color.primary
+
+button
+	@extend $ui-control
+
+	&.primary
+		background: color.primary
+		border-color: color.primary
+		color: hue.B1
+	&.link
+		border-color: transparent
+		color: color.primary
 
 label
 	display: block
-	height: 5rem
+	min-height: 5rem
 	display: flex
 	flex-direction: column
 	line-height: 1.75rem
+
 	span::first-letter
 		text-transform: uppercase
 
+	textarea,
 	input:not([type=checkbox]):not([type=radio])
 		@extend $ui-control
+		width: 100%
+
+		&:invalid
+			border-color: hue.A4
+			& + small
+				color: hue.A4
 			
 	select
 		@extend $ui-control
+		width: 100%
+
 		&[size],
 		&[multiple]
 			height: auto

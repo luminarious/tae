@@ -93,6 +93,7 @@ html(lang="en")
 				label
 					span Autocomplete
 					input(type="text" list="browsers" id="input-autocomplete")
+					small.form-help Enter your favourite browser
 					datalist#browsers
 						option(value="Chrome")
 						option(value="Firefox")
@@ -102,7 +103,9 @@ html(lang="en")
 		figure(role="group")
 			header Buttons
 			div
-				button(type="button") Button
+				button.primary(type="button") primary button
+				button(type="button") default button
+				button.link(type="button") link button
 		figure(role="group").span-4
 			header Text fields
 			div
@@ -123,21 +126,28 @@ html(lang="en")
 			div
 				label
 					span Day
-					input(type="tel" list="days" id="input-day")
+					input(type="tel" list="days" id="input-day" pattern="[0-9]{1,2}")
 					datalist#days
 						each _,i in Array(31)
 							option(value=i)
 				label
 					span Month
-					input(type="tel" list="months" id="input-month")
+					input(type="tel" list="months" id="input-month" pattern="[0-9]{1,2}")
 					datalist#months
 						each _,i in Array(12)
 							option(value=i)
 				label
 					span Year
-					input(type="tel" list="years" id="input-year")
+					input(type="tel" list="years" id="input-year" pattern="[0-9]{4}")
 					datalist#years
 						each _ in [2000, 2001, 2002]
 							option(value=_)
+		figure(role="group")
+			header Textarea
+			div
+				label
+					span Message
+					textarea#textarea(rows="10")
+					small Don't be rude
 		
 	//include _partial.pug
