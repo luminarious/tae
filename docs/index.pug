@@ -84,13 +84,6 @@ html(lang="en")
 			header Select
 			div
 				label
-					span Select
-					select#select(name="select")
-						optgroup(label="Group")
-							option Item
-						optgroup(label="Second Group")
-							option Item from second group
-				label
 					span Autocomplete
 					input(type="text" list="browsers" id="input-autocomplete")
 					small.form-help Enter your favourite browser
@@ -100,6 +93,13 @@ html(lang="en")
 						option(value="Safari")
 						option(value="Edge")
 						option(value="Opera")
+				label
+					span Select
+					select#select(name="select")
+						optgroup(label="Group")
+							option Item
+						optgroup(label="Second Group")
+							option Item from second group
 		figure(role="group")
 			header Buttons
 			div

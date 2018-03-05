@@ -4,7 +4,6 @@ $ui-control
 	appearance: none
 	border: 2px solid alpha(hue.B6, 0.6)
 	color: inherit
-	line-height: 1rem
 	outline: 0
 	padding: 1px space.s
 	vertical-align: middle
@@ -12,6 +11,7 @@ $ui-control
 	border-radius: space.xs
 	background: hue.B1
 	display: inline-block
+	resize: vertical
 	
 	&:focus
 		border-color: color.primary
@@ -36,6 +36,10 @@ label
 
 	span::first-letter
 		text-transform: uppercase
+
+	small
+		color: hue.B5
+		font-size: .75em
 
 	textarea,
 	input:not([type=checkbox]):not([type=radio])
