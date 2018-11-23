@@ -1,58 +1,31 @@
 {
-  "name": "tae",
-  "version": "0.0.1",
-  "description": "CSS framework",
-  "main": "tae.styl",
-  "style": "tae/css/tae.css",
+  "name": "Tae",
+  "version": "1.0.0",
+  "description": "Tiny CSS",
+  "author": "Hardi Kõvamees",
+  "private": true,
   "scripts": {
-    "build": "npm run build-clean && npm run build-stylus && npm run build-autoprefix",
-    "build-clean": "rimraf css/*",
-    "build-stylus": "stylus --sourcemap tae.styl --out css",
-    "build-autoprefix": "postcss --use autoprefixer --map false --output css/tae.css css/tae.css",
-    "deploy": "npm run build && npm run docs",
-    "docs": "npm run docs-stylus && npm run docs-autoprefix",
-    "docs-stylus": "stylus docs/bulma-docs.stylus docs/css/bulma-docs.css",
-    "docs-autoprefix": "postcss --use autoprefixer --map false --output docs/css/bulma-docs.css docs/css/bulma-docs.css",
-    "start": "npm run build-stylus -- --watch",
-    "start-docs": "npm run docs-stylus -- --watch",
-    "start-test": "npm run test-stylus -- --watch",
-    "test-stylus": "stylus doc/bulma-test.stylus doc/css/bulma-test.css",
-    "dev": "parcel docs/index.pug"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/luminarious/tae.git"
+  "dependencies": {
+    "cross-env": "^5.2",
+    "nuxt": "latest"
   },
-  "keywords": [
-    "css",
-    "stylus",
-    "framework"
-  ],
-  "author": "luminarious",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/luminarious/tae/issues"
-  },
-  "homepage": "https://github.com/luminarious/tae#readme",
-  "files": [
-    "css",
-    "source",
-    "tae.styl",
-    "licence.md",
-    "readme.md"
-  ],
   "devDependencies": {
-    "a11y.css": "^4.5.0",
-    "autoprefixer": "^9.1.5",
-    "changelog.md": "^1.1.0",
-    "eslint": "^5.5.0",
-    "modern-normalize": "^0.5.0",
-    "parcel": "^1.9.7",
-    "parcel-bundler": "^1.7.0",
-    "postcss-cli": "^6.0.0",
-    "pug": "^2.0.3",
-    "pug-loader": "^2.4.0",
-    "rimraf": "^2.6.2",
-    "stylus": "^0.54.5"
+    "babel-eslint": "^10.0.*",
+    "eslint": "^5.9.*",
+    "eslint-loader": "^2.1.*",
+    "eslint-plugin-vue": "^4.7.*",
+    "modern-normalize": "^0.5.*",
+    "nodemon": "^1.18.*",
+    "pug": "^2.0.*",
+    "pug-plain-loader": "^1.0.*",
+    "stylus": "^0.54.*",
+    "stylus-loader": "^3.0.*"
   }
 }

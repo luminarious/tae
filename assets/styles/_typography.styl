@@ -1,0 +1,160 @@
+family-base = -apple-system, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'
+
+$family-heading
+	font-family: 'Segoe UI', family-base
+	&:lang(cs)
+	&:lang(et)
+	&:lang(hr)
+	&:lang(hu)
+	&:lang(lt)
+	&:lang(lv)
+	&:lang(tr)
+	&:lang(sk)
+	&:lang(kk)
+		font-family: 'Segoe UI Regular EastEuropean', family-base
+	&:lang(ru)
+	&:lang(uk)
+	&:lang(bg)
+		font-family: 'Segoe UI Regular Cyrillic', family-base
+
+$family-body
+	font-family: 'Inter UI', 'Segoe UI', family-base
+	&:lang(cs)
+	&:lang(et)
+	&:lang(hr)
+	&:lang(hu)
+	&:lang(lt)
+	&:lang(lv)
+	&:lang(tr)
+	&:lang(sk)
+	&:lang(kk)
+		font-family: 'Inter UI', 'Segoe UI Regular EastEuropean', family-base
+	&:lang(ru), *:lang(ru),
+	&:lang(uk),
+	&:lang(bg)
+		font-family: 'Inter UI', 'Segoe UI Regular Cyrillic', family-base
+
+// Display
+.type-d1
+.type-d2
+.type-d3
+	@extend $family-heading
+	margin-top: 1em
+	margin-bottom: 1rem
+	letter-spacing: -0.03em
+	line-height: 1
+.type-d3
+	font-size: (96/16)rem
+	font-weight: 300
+.type-d2
+	font-size: (60/16)rem
+	font-weight: 300
+.type-d1
+	font-size: (48/16)rem
+	font-weight: 300
+
+// Heading
+.type-h1
+.type-h2
+.type-h3
+	@extend $family-heading
+	margin-top: 1em
+	margin-bottom: 1rem
+	line-height: 1.15
+.type-h1
+	font-size: (34/16)rem
+	font-weight: 400
+.type-h2
+	font-size: (24/16)rem
+	font-weight: 400
+.type-h3
+	font-size: (20/16)rem
+	font-weight: 500
+
+// Subheading
+.type-s1
+.type-s2
+	@extend $family-body
+	font-weight: 500
+.type-s1
+	font-size: (16/16)rem
+	letter-spacing: (0.15/16)rem
+	line-height: (24/16)rem
+.type-s2
+	font-size: (14/16)rem
+	letter-spacing: (0.1/16)rem
+	line-height: (24/16)rem
+
+// Body
+.type-b1
+	font-size: (16/16)rem
+	line-height: (24/16)rem
+.type-b2
+	font-size: (14/16)rem
+	line-height: (20/16)rem
+
+// Miniscule sizes
+.type-small
+	font-size: (14/16)rem
+	line-height: (20/16)rem
+.type-caption
+	font-size: (12/16)rem
+	letter-spacing: (0.4/16)rem
+	line-height: (16/16)rem
+.type-button
+	font-size: (14/16)rem
+	font-weight: 500
+	letter-spacing: (1.25/16)rem
+	line-height: (16/16)rem
+	text-transform: uppercase
+	text-decoration: none
+.type-overline
+	font-size: (12/16)rem
+	font-weight: 500
+	letter-spacing: (2/16)rem
+	line-height: (32/16)rem
+	text-decoration: none
+	text-transform: uppercase
+
+// Elements
+html
+body
+	@extend $family-body
+	@supports (font-variant-ligatures: common-ligatures)
+		font-feature-settings: normal
+		font-variant-ligatures: common-ligatures
+
+h1
+	@extend .type-h1
+h2
+	@extend .type-h2
+h3
+	@extend .type-h3
+
+figcaption,
+small
+	@extend .type-small
+
+p
+	margin: 0 0 1rem
+
+// Utilities
+.text
+	&-right
+		text-align: right
+	&-center
+		text-align: center
+.case
+	&-none
+		text-transform: none
+	&-upper
+		text-transform: uppercase
+	&-lower
+		text-transform: lowercase
+	&-title
+		text-transform: capitalize
+
+.letter-upper::first-letter
+	text-transform: uppercase
+.letter-lower::first-letter
+	text-transform: lowercase

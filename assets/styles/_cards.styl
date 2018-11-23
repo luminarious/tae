@@ -1,0 +1,31 @@
+.grid
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	grid-gap: 1rem
+	& > *
+		display: flex
+		flex-direction: column
+.span-4
+	grid-template-columns: span 4
+
+.card
+	overflow: hidden
+	padding: 0
+	margin: 0
+	border: 1px solid
+	border-radius: space.s
+	header
+		border-top-left-radius: @border-radius
+		border-top-right-radius: @border-radius
+		padding: space.squish.l
+		border-bottom-width: 1px
+		border-bottom-style: solid
+	& > div
+		padding: space.squish.l
+		flex: 1
+	footer
+		border-bottom-left-radius: @border-radius
+		border-bottom-right-radius: @border-radius
+		border-top-width: 1px
+		border-top-style: solid
+		padding: space.squish.l
